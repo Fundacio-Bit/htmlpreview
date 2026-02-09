@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Previsualiza archivos HTML de GitHub y BitBucket directamente en tu navegador">
+    <title>HTML Preview - Visualiza HTML de GitHub y BitBucket</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="logo">🔍</div>
+            <h1>GitHub & BitBucket HTML Preview</h1>
+            <p class="subtitle">
+                Previsualiza archivos HTML de repositorios públicos de GitHub y BitBucket directamente en tu navegador, sin necesidad de clonar el repositorio.
+            </p>
+
+            <form id="previewForm" class="form-container" onsubmit="event.preventDefault(); handlePreview();">
+                <div class="input-group">
+                    <input 
+                        type="url" 
+                        id="urlInput" 
+                        class="url-input" 
+                        placeholder="https://github.com/usuario/repo/blob/main/index.html"
+                        required
+                        autocomplete="off"
+                    >
+                    <button type="submit" class="btn-preview">
+                        Vista Previa
+                    </button>
+                </div>
+            </form>
+
+            <div class="example-box">
+                <h3>Ejemplo de uso</h3>
+                <p class="example-url">
+                    Añade <strong>?</strong> seguido de la URL:<br>
+                    http://tu-dominio.github.io/<strong>?</strong>https://github.com/twbs/bootstrap/blob/gh-pages/2.3.2/index.html
+                </p>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Rápido y Sencillo</h3>
+                    <p>Solo pega la URL y obtén una vista previa instantánea</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Sin Instalación</h3>
+                    <p>No necesitas descargar ni instalar nada</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <h3>GitHub & BitBucket</h3>
+                    <p>Compatible con ambas plataformas</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>
+                    Desarrollado con ❤️ | 
+                    <a href="https://github.com/htmlpreview/htmlpreview.github.com" target="_blank">Ver en GitHub</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./htmlpreview.js"></script>
+    <script>
+        // Cargar URL del parámetro al iniciar
+        window.addEventListener('DOMContentLoaded', function() {
+            const urlParam = location.search.substring(1);
+            if (urlParam) {
+                document.getElementById('urlInput').value = urlParam;
+            }
+        });
+
+        function handlePreview() {
+            const url = document.getElementById('urlInput').value.trim();
+            if (url) {
+                location.href = '/?' + url;
+            }
+        }
+    </script>
+</body>
+</html>
