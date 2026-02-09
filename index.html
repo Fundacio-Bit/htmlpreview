@@ -3,73 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Previsualiza archivos HTML de GitHub y BitBucket directamente en tu navegador">
-    <title>HTML Preview - Visualiza HTML de GitHub y BitBucket</title>
+    <meta name="description" content="Previsualiza archivos HTML de repositorios GitHub y BitBucket en tiempo real">
+    <title>HTML Preview - Vista previa instantánea de archivos HTML</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="logo">🔍</div>
-            <h1>GitHub & BitBucket HTML Preview</h1>
-            <p class="subtitle">
-                Previsualiza archivos HTML de repositorios públicos de GitHub y BitBucket directamente en tu navegador, sin necesidad de clonar el repositorio.
+    <!-- Hero Section -->
+    <section class="hero">
+        <nav class="navbar">
+            <div class="nav-logo">📄 HTMLPreview</div>
+            <div class="nav-links">
+                <a href="#como-funciona">Cómo funciona</a>
+                <a href="#caracteristicas">Características</a>
+                <a href="https://github.com/fundacio-bit/htmlpreview" target="_blank" class="btn-github">GitHub</a>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <h1 class="hero-title">Vista previa de HTML<br><span class="highlight">sin descargar nada</span></h1>
+            <p class="hero-description">
+                Visualiza archivos HTML de GitHub y BitBucket directamente en tu navegador.<br>
+                Rápido, seguro y sin complicaciones.
             </p>
 
-            <form id="previewForm" class="form-container" onsubmit="event.preventDefault(); handlePreview();">
-                <div class="input-group">
+            <form class="search-form" onsubmit="event.preventDefault(); handlePreview();">
+                <div class="search-container">
                     <input 
                         type="url" 
                         id="urlInput" 
-                        class="url-input" 
-                        placeholder="https://github.com/usuario/repo/blob/main/index.html"
+                        class="search-input" 
+                        placeholder="Pega aquí la URL de GitHub o BitBucket..."
                         required
-                        autocomplete="off"
                     >
-                    <button type="submit" class="btn-preview">
-                        Vista Previa
+                    <button type="submit" class="search-button">
+                        <span>Previsualizar</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 16L14 10L8 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </button>
                 </div>
             </form>
 
-            <div class="example-box">
-                <h3>Ejemplo de uso</h3>
-                <p class="example-url">
-                    Añade <strong>?</strong> seguido de la URL:<br>
-                    http://tu-dominio.github.io/<strong>?</strong>https://github.com/twbs/bootstrap/blob/gh-pages/2.3.2/index.html
-                </p>
-            </div>
-
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Rápido y Sencillo</h3>
-                    <p>Solo pega la URL y obtén una vista previa instantánea</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Sin Instalación</h3>
-                    <p>No necesitas descargar ni instalar nada</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🌐</div>
-                    <h3>GitHub & BitBucket</h3>
-                    <p>Compatible con ambas plataformas</p>
-                </div>
-            </div>
-
-            <div class="footer">
-                <p>
-                    Desarrollado con ❤️ | 
-                    <a href="https://github.com/htmlpreview/htmlpreview.github.com" target="_blank">Ver en GitHub</a>
-                </p>
+            <div class="quick-example">
+                <span class="example-label">Ejemplo:</span>
+                <code class="example-code">https://github.com/user/repo/blob/main/index.html</code>
             </div>
         </div>
-    </div>
+
+        <div class="scroll-indicator">
+            <span>Descubre más</span>
+            <div class="arrow-down">↓</div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="como-funciona" class="section section-gray">
+        <div class="container-small">
+            <h2 class="section-title">Cómo funciona</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Copia la URL</h3>
+                    <p>Copia la URL del archivo HTML desde GitHub o BitBucket</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Pégala aquí</h3>
+                    <p>Pega la URL en el campo de búsqueda superior</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Visualiza</h3>
+                    <p>Obtén una vista previa instantánea del contenido HTML</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="caracteristicas" class="section">
+        <div class="container-small">
+            <h2 class="section-title">Características principales</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Velocidad</h3>
+                    <p>Carga instantánea sin necesidad de clonar repositorios</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Fidelidad</h3>
+                    <p>Renderiza CSS, JavaScript y recursos exactamente como en producción</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Seguridad</h3>
+                    <p>Todo se ejecuta en tu navegador, sin backend</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Multiplataforma</h3>
+                    <p>Compatible con GitHub y BitBucket</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Responsive</h3>
+                    <p>Funciona perfectamente en cualquier dispositivo</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🆓</div>
+                    <h3>Gratis</h3>
+                    <p>100% gratuito y de código abierto</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+        <div class="cta-content">
+            <h2>¿Listo para probarlo?</h2>
+            <p>Empieza a previsualizar archivos HTML ahora mismo</p>
+            <a href="#" class="btn-cta" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">Comenzar ahora</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 HTMLPreview. Desarrollado por <a href="https://github.com/fundacio-bit" target="_blank">Fundació Bit</a></p>
+            <div class="footer-links">
+                <a href="https://github.com/fundacio-bit/htmlpreview" target="_blank">GitHub</a>
+                <a href="https://github.com/fundacio-bit/htmlpreview/issues" target="_blank">Reportar error</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="./htmlpreview.js"></script>
     <script>
-        // Cargar URL del parámetro al iniciar
         window.addEventListener('DOMContentLoaded', function() {
             const urlParam = location.search.substring(1);
             if (urlParam) {
@@ -80,7 +151,7 @@
         function handlePreview() {
             const url = document.getElementById('urlInput').value.trim();
             if (url) {
-                location.href = '/?' + url;
+                location.href = '?' + url;
             }
         }
     </script>
