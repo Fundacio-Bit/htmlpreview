@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Previsualiza archivos HTML de repositorios GitHub y BitBucket en tiempo real">
-    <title>HTML Preview - Vista previa instantánea de archivos HTML</title>
+    <meta name="description" content="Previsualitza fitxers HTML de repositoris GitHub i BitBucket en temps real">
+    <title>HTML Preview - Vista prèvia instantània de fitxers HTML</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -13,17 +13,16 @@
         <nav class="navbar">
             <div class="nav-logo">📄 HTMLPreview</div>
             <div class="nav-links">
-                <a href="#como-funciona">Cómo funciona</a>
-                <a href="#caracteristicas">Características</a>
+                <a href="#como-funciona">Com funciona</a>
+                <a href="#caracteristicas">Característiques</a>
                 <a href="https://github.com/fundacio-bit/htmlpreview" target="_blank" class="btn-github">GitHub</a>
             </div>
         </nav>
 
         <div class="hero-content">
-            <h1 class="hero-title">Vista previa de HTML<br><span class="highlight">sin descargar nada</span></h1>
+            <h1 class="hero-title">Vista prèvia d'HTML<br><span class="highlight">sense descarregar res</span></h1>
             <p class="hero-description">
-                Visualiza archivos HTML de GitHub y BitBucket directamente en tu navegador.<br>
-                Rápido, seguro y sin complicaciones.
+                Visualitza fitxers HTML de GitHub i BitBucket directament al navegador.
             </p>
 
             <form class="search-form" onsubmit="event.preventDefault(); handlePreview();">
@@ -32,11 +31,11 @@
                         type="url" 
                         id="urlInput" 
                         class="search-input" 
-                        placeholder="Pega aquí la URL de GitHub o BitBucket..."
+                        placeholder="Enganxa aquí l'URL de GitHub o BitBucket..."
                         required
                     >
                     <button type="submit" class="search-button">
-                        <span>Previsualizar</span>
+                        <span>Previsualitzar</span>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path d="M8 16L14 10L8 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -45,13 +44,13 @@
             </form>
 
             <div class="quick-example">
-                <span class="example-label">Ejemplo:</span>
+                <span class="example-label">Exemple:</span>
                 <code class="example-code">https://github.com/user/repo/blob/main/index.html</code>
             </div>
         </div>
 
         <div class="scroll-indicator">
-            <span>Descubre más</span>
+            <span>Descobreix més</span>
             <div class="arrow-down">↓</div>
         </div>
     </section>
@@ -59,22 +58,22 @@
     <!-- How it works -->
     <section id="como-funciona" class="section section-gray">
         <div class="container-small">
-            <h2 class="section-title">Cómo funciona</h2>
+            <h2 class="section-title">Com funciona</h2>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Copia la URL</h3>
-                    <p>Copia la URL del archivo HTML desde GitHub o BitBucket</p>
+                    <h3>Copia l'URL</h3>
+                    <p>Copia l'URL del fitxer HTML des de GitHub o BitBucket</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Pégala aquí</h3>
-                    <p>Pega la URL en el campo de búsqueda superior</p>
+                    <h3>Enganxa-la aquí</h3>
+                    <p>Enganxa l'URL al camp de cerca superior</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Visualiza</h3>
-                    <p>Obtén una vista previa instantánea del contenido HTML</p>
+                    <h3>Visualitza</h3>
+                    <p>Obtén una vista prèvia instantània del contingut HTML</p>
                 </div>
             </div>
         </div>
@@ -83,37 +82,38 @@
     <!-- Features -->
     <section id="caracteristicas" class="section">
         <div class="container-small">
-            <h2 class="section-title">Características principales</h2>
+            <h2 class="section-title">Característiques principals</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3>Velocidad</h3>
-                    <p>Carga instantánea sin necesidad de clonar repositorios</p>
+                    <h3>Velocitat</h3>
+                    <p>Càrrega instantània sense necessitat de clonar repositoris</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🎨</div>
-                    <h3>Fidelidad</h3>
-                    <p>Renderiza CSS, JavaScript y recursos exactamente como en producción</p>
+                    <h3>Fidelitat</h3>
+                    <p>Renderitza CSS, JavaScript i recursos exactament com en producció</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🔐</div>
-                    <h3>Seguridad</h3>
-                    <p>Todo se ejecuta en tu navegador, sin backend</p>
+                    <h3>Seguretat</h3>
+                    <p>Tot s'executa al teu navegador, sense backend</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
                     <h3>Multiplataforma</h3>
-                    <p>Compatible con GitHub y BitBucket</p>
+                    <p>Compatible amb GitHub i BitBucket</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📱</div>
                     <h3>Responsive</h3>
-                    <p>Funciona perfectamente en cualquier dispositivo</p>
+                    <p>Funciona perfectament en qualsevol dispositiu</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🆓</div>
-                    <h3>Gratis</h3>
-                    <p>100% gratuito y de código abierto</p>
+                    <h3>Llicència MIT</h3>
+                    <p>Veure <a href="https://opensource.org/licenses/MIT" target="_blank">aquí</a></p><br>
+                    <p>Del original <a href="https://github.com/htmlpreview/htmlpreview.github.com" target="_blank">htmlpreview</a></p>
                 </div>
             </div>
         </div>
@@ -122,16 +122,16 @@
     <!-- CTA -->
     <section class="section cta-section">
         <div class="cta-content">
-            <h2>¿Listo para probarlo?</h2>
-            <p>Empieza a previsualizar archivos HTML ahora mismo</p>
-            <a href="#" class="btn-cta" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">Comenzar ahora</a>
+            <h2>Preparat per provar-ho?</h2>
+            <p>Comença a previsualitzar fitxers HTML ara mateix</p>
+            <a href="#" class="btn-cta" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">Començar ara</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2026 HTMLPreview. Desarrollado por <a href="https://github.com/fundacio-bit" target="_blank">Fundació Bit</a></p>
+            <p>&copy; 2026 HTMLPreview. Desenvolupat per <a href="https://github.com/fundacio-bit" target="_blank">Fundació Bit</a></p>
             <div class="footer-links">
                 <a href="https://github.com/fundacio-bit/htmlpreview" target="_blank">GitHub</a>
                 <a href="https://github.com/fundacio-bit/htmlpreview/issues" target="_blank">Reportar error</a>
