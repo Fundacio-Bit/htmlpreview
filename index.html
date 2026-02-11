@@ -1,159 +1,47 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Previsualitza fitxers HTML de repositoris GitHub i BitBucket en temps real">
-    <title>HTML Preview - Vista prèvia instantània de fitxers HTML</title>
-    <link rel="stylesheet" href="./styles.css">
+	<meta charset="utf-8">
+	<title>GitHub &amp; BitBucket HTML Preview</title>
+	<style>
+	body {
+		font: 12px 'Helvetica Neue', Helvetica, Arial, freesans, clean, sans-serif;
+		color: #333;
+	}
+	h1 {
+		font-size: 20px;
+	}
+	a {
+		color: #666;
+	}
+	#previewform {
+		display: none;
+		padding: 20px; 
+		text-align: center;
+	}
+	strong {
+		color: #333;
+		background-color: #FAFFA6;
+		padding: 0.1em;
+	}
+	#footer {
+		margin: 20px 0;
+		font-size: 10px;
+		color: #666;
+	}
+	</style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <nav class="navbar">
-            <div class="nav-logo">📄 HTMLPreview</div>
-            <div class="nav-links">
-                <a href="#como-funciona">Com funciona</a>
-                <a href="#caracteristicas">Característiques</a>
-                <a href="https://github.com/fundacio-bit/htmlpreview" target="_blank" class="btn-github">GitHub</a>
-            </div>
-        </nav>
-
-        <div class="hero-content">
-            <h1 class="hero-title">Vista prèvia d'HTML<br><span class="highlight">sense descarregar res</span></h1>
-            <p class="hero-description">
-                Visualitza fitxers HTML de GitHub i BitBucket directament al navegador.
-            </p>
-
-            <form class="search-form" onsubmit="event.preventDefault(); handlePreview();">
-                <div class="search-container">
-                    <input 
-                        type="url" 
-                        id="urlInput" 
-                        class="search-input" 
-                        placeholder="Enganxa aquí l'URL de GitHub o BitBucket..."
-                        required
-                    >
-                    <button type="submit" class="search-button">
-                        <span>Previsualitzar</span>
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M8 16L14 10L8 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-            </form>
-
-            <div class="quick-example">
-                <span class="example-label">Exemple:</span>
-                <code class="example-code">https://github.com/user/repo/blob/main/index.html</code>
-            </div>
-        </div>
-
-        <div class="scroll-indicator">
-            <span>Descobreix més</span>
-            <div class="arrow-down">↓</div>
-        </div>
-    </section>
-
-    <!-- How it works -->
-    <section id="como-funciona" class="section section-gray">
-        <div class="container-small">
-            <h2 class="section-title">Com funciona</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Copia l'URL</h3>
-                    <p>Copia l'URL del fitxer HTML des de GitHub o BitBucket</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Enganxa-la aquí</h3>
-                    <p>Enganxa l'URL al camp de cerca superior</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Visualitza</h3>
-                    <p>Obtén una vista prèvia instantània del contingut HTML</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features -->
-    <section id="caracteristicas" class="section">
-        <div class="container-small">
-            <h2 class="section-title">Característiques principals</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Velocitat</h3>
-                    <p>Càrrega instantània sense necessitat de clonar repositoris</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Fidelitat</h3>
-                    <p>Renderitza CSS, JavaScript i recursos exactament com en producció</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔐</div>
-                    <h3>Seguretat</h3>
-                    <p>Tot s'executa al teu navegador, sense backend</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
-                    <h3>Multiplataforma</h3>
-                    <p>Compatible amb GitHub i BitBucket</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Responsive</h3>
-                    <p>Funciona perfectament en qualsevol dispositiu</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🆓</div>
-                    <h3>Llicència MIT</h3>
-                    <p>Veure <a href="https://opensource.org/licenses/MIT" target="_blank">aquí</a></p><br>
-                    <p>Del original <a href="https://github.com/htmlpreview/htmlpreview.github.com" target="_blank">htmlpreview</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section cta-section">
-        <div class="cta-content">
-            <h2>Preparat per provar-ho?</h2>
-            <p>Comença a previsualitzar fitxers HTML ara mateix</p>
-            <a href="#" class="btn-cta" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">Començar ara</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2026 HTMLPreview. Desenvolupat per <a href="https://github.com/fundacio-bit" target="_blank">Fundació Bit</a></p>
-            <div class="footer-links">
-                <a href="https://github.com/fundacio-bit/htmlpreview" target="_blank">GitHub</a>
-                <a href="https://github.com/fundacio-bit/htmlpreview/issues" target="_blank">Reportar error</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="./htmlpreview.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
-            const urlParam = location.search.substring(1);
-            if (urlParam) {
-                document.getElementById('urlInput').value = urlParam;
-            }
-        });
-
-        function handlePreview() {
-            const url = document.getElementById('urlInput').value.trim();
-            if (url) {
-                location.href = '?' + url;
-            }
-        }
-    </script>
+	<form id="previewform" onsubmit="location.href='/?'+this.file.value;return false">
+		<h1>GitHub &amp; BitBucket HTML Preview</h1>
+		<p>
+			Enter URL of the HTML file to preview:
+			<input type="url" id="file" value="" placeholder="e.g. https://github.com/user/repo/blob/master/index.html" size="60" autofocus>
+			<input type="submit" value="Preview">
+		</p>
+		<p>or prepend to the URL: <code><strong>http://htmlpreview.github.io/?</strong>https://github.com/twbs/bootstrap/blob/gh-pages/2.3.2/index.html</code></p>
+		<p id="footer">Developed by <a href="https://github.com/niutech">niu tech</a> | Contribute on <a href="https://github.com/htmlpreview/htmlpreview.github.com">GitHub</a></p>
+	</form>
+	<script src="/htmlpreview.js"></script>
 </body>
 </html>
